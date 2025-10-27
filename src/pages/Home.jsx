@@ -4,12 +4,19 @@ import plus from "../assets/icons/plus.svg";
 import robot from "../assets/icons/robot.svg";
 import collaboration from "../assets/icons/collaboration.svg";
 import analytics from "../assets/icons/analytics.svg";
+import av_1 from "../assets/img/av-1.png";
+import av_2 from "../assets/img/av-2.png";
+import av_3 from "../assets/img/Blue Background.gif";
+
 
 const Home = () => {
  return (
   <>
    <header className={styles.header}>
-    <div className={styles.header_card}></div>
+    <div className={styles.header_card}>
+     <h1>ZenDesk</h1>
+     <img src={av_3} alt="" />
+    </div>
     <div className={styles.header_text}>
      <p>
       Effortlessly manage, track, and resolve tickets with Ticket Flow—your
@@ -29,6 +36,7 @@ const Home = () => {
     <div className={styles.block}></div>
     <div className={styles.circle}></div>
    </header>
+
    <main className={styles.main}>
     <div className={styles.feature}>
      <h2>Powerful features, Effortless workflow</h2>
@@ -93,7 +101,7 @@ const Home = () => {
        </p>
        <div className={styles.user_info}>
         <div className={styles.avatar}>
-         <img src="" alt="" />
+          <img src={av_1} alt="" />
         </div>
         <div>
          <h3>John Doe</h3>
@@ -111,7 +119,7 @@ const Home = () => {
        </p>
        <div className={styles.user_info}>
         <div className={styles.avatar}>
-         <img src="" alt="" />
+         <img src={av_2} alt="" />
         </div>
         <div>
          <h3>0x anon</h3>
