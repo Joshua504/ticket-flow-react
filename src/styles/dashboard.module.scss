@@ -1,0 +1,89 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: $bg-color;
+
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $card-color;
+
+  h1 {
+    font-size: $size-1;
+    font-family: $font-2;
+    color: $text-color;
+    margin: 0;
+
+    @include mobile {
+      font-size: $size-4;
+    }
+  }
+
+  .logoutBtn {
+    @include btn;
+    background-color: #f44336;
+    color: white;
+
+    &:hover {
+      background-color: #d32f2f;
+    }
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  background: $card-color;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h3 {
+    font-size: $size-4;
+    color: $text-color;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .statNumber {
+    font-size: $size-0;
+    font-family: $font-2;
+    color: $text-color-1;
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+
+  .ticketLink {
+    @include btn;
+    font-size: $size-4;
+    padding: 1rem 2rem;
+  }
+}

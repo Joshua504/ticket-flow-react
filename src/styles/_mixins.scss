@@ -1,0 +1,80 @@
+@use "../styles/variables" as *;
+
+@mixin btn {
+ padding: 10px 30px;
+ border-radius: 5px;
+ background-color: $text-color-1;
+ color: $card-color;
+ border: none;
+ font-family: inherit;
+ font-size: $size-3;
+ font-weight: 600;
+ text-transform: uppercase;
+ transition: all 0.5s ease;
+
+ &:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+}
+
+@mixin h2 {
+ font-size: $size-1;
+ font-family: $font-2;
+ text-align: center;
+ margin-bottom: 1rem;
+}
+
+@mixin p {
+ font-size: $size-2;
+ text-align: center;
+}
+
+@mixin shape {
+ height: 200px;
+ width: 200px;
+ background-color: $text-color-1;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.164);
+ position: absolute;
+}
+
+@mixin sm {
+ @media (max-width: 375px) {
+  @content;
+ }
+}
+
+@mixin mobile {
+ @media (max-width: 767px) {
+  @content;
+ }
+}
+
+@mixin tablet {
+ @media (768px < width <= 1024px) {
+  @content;
+ }
+}
+
+@mixin laptop-sm {
+ @media (1025px < width <= 1440px) {
+  @content;
+ }
+}
+
+@mixin Qhd {
+ @media (2560px <= width <= 3840px) {
+  @content;
+ }
+}
+
+@mixin Uhd {
+	@media (3840px <= width) {
+		@content;
+	}
+}
+
+@mixin desktop-ultrawide {
+	@media (3200px <= width <= 3500px) {
+		@content;
+	}
+}

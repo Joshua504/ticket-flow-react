@@ -1,0 +1,57 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.footer {
+ padding: 3em;
+ @include mobile{
+  padding: 2rem 1rem;
+ }
+ @include Qhd {
+  padding: 1em 29em;
+ }
+ @include Uhd {
+  padding: 1em 60em;
+ }
+ @include desktop-ultrawide {
+  padding: 1em 50em;
+ }
+
+ .footer_con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h1 {
+   font-size: $size-2;
+   font-family: $font-2;
+   color: $text-color-1;
+  }
+
+  .socials{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   @include mobile{
+    gap: 1rem;
+   }
+
+   div{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+    }
+   }
+  }
+ }
+
+ .copy{
+  text-align: center;
+  font-size: $size-3;
+ }
+}
