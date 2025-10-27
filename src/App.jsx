@@ -1,5 +1,6 @@
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import TicketManagement from "./pages/TicketManagement";
@@ -13,9 +14,17 @@ return (
 <Nav />
 <Routes>
 <Route path="/" element={<Home />} />
-<Route path="/dashboard" element={<Dashboard />} />
- <Route path="/tickets" element={<TicketManagement />} />
- <Route path="/login" element={<Login />} />
+<Route path="/dashboard" element={
+  <ProtectedRoute>
+    <Dashboard />
+  </ProtectedRoute>
+} />
+ <Route path="/tickets" element={
+  <ProtectedRoute>
+    <TicketManagement />
+  </ProtectedRoute>
+} />
+ <Route path="/auth/login" element={<Login />} />
  </Routes>
   <Footer />
    </>

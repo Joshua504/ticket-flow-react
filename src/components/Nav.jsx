@@ -28,7 +28,7 @@ const Nav = () => {
  <span className={styles.bars}></span>
  <span className={styles.bars}></span>
  </div>
- <Link className={styles.login} to="/login" onClick={() => setIsOpen(false)}>
+ <Link className={styles.login} to="/auth/login" onClick={() => setIsOpen(false)}>
  Login
  </Link>
  </div>

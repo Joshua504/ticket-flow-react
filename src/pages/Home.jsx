@@ -25,12 +25,12 @@ const Home = () => {
       customers happy!
      </p>
      <section className={styles.cta_section}>
-      <Link className={styles.cta} to="/login">
-       Get started
-      </Link>
-      <Link className={styles.cta} to="/login">
-       Login
-      </Link>
+     <Link className={styles.cta} to="/auth/login">
+     Get started
+     </Link>
+     <Link className={styles.cta} to="/auth/login">
+     Login
+     </Link>
      </section>
     </div>
     <div className={styles.block}></div>

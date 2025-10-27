@@ -20,17 +20,13 @@ const TicketManagement = () => {
  const [errors, setErrors] = useState({});
 
  useEffect(() => {
-  const currentUser = getCurrentUser();
-  if (!currentUser) {
-   navigate("/login");
-   return;
-  }
-  setUser(currentUser);
+ const currentUser = getCurrentUser();
+ setUser(currentUser);
 
-  // Load tickets from localStorage (simulating API)
-  const storedTickets = JSON.parse(localStorage.getItem("tickets") || "[]");
-  setTickets(storedTickets);
- }, [navigate]);
+ // Load tickets from localStorage (simulating API)
+ const storedTickets = JSON.parse(localStorage.getItem("tickets") || "[]");
+ setTickets(storedTickets);
+  }, []);
 
  const showToast = (message, type) => {
   setToast({ message, type });
@@ -117,8 +113,8 @@ const TicketManagement = () => {
  };
 
  const handleLogout = () => {
-  logout();
-  navigate("/login");
+ logout();
+ navigate("/auth/login");
  };
 
  const resetForm = () => {
@@ -160,8 +156,6 @@ const TicketManagement = () => {
     return "#9e9e9e";
   }
  };
-
- if (!user) return null;
 
  return (
   <div className={styles.container}>

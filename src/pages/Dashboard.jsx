@@ -14,30 +14,24 @@ const Dashboard = () => {
  });
 
  useEffect(() => {
-  const currentUser = getCurrentUser();
-  if (!currentUser) {
-   navigate("/login");
-   return;
-  }
-  setUser(currentUser);
+ const currentUser = getCurrentUser();
+ setUser(currentUser);
 
-  // Calculate stats from localStorage
-  const tickets = JSON.parse(localStorage.getItem("tickets") || "[]");
-  const total = tickets.length;
+ // Calculate stats from localStorage
+ const tickets = JSON.parse(localStorage.getItem("tickets") || "[]");
+ const total = tickets.length;
   const open = tickets.filter((ticket) => ticket.status === "open").length;
-  const resolved = tickets.filter(
-   (ticket) => ticket.status === "resolved"
-  ).length;
+ const resolved = tickets.filter(
+  (ticket) => ticket.status === "resolved"
+ ).length;
 
-  setStats({ total, open, resolved });
- }, [navigate]);
+ setStats({ total, open, resolved });
+ }, []);
 
  const handleLogout = () => {
-  logout();
-  navigate("/login");
+ logout();
+  navigate("/auth/login");
  };
-
- if (!user) return null;
 
  return (
   <div className={styles.container}>
