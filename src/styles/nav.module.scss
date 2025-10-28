@@ -15,15 +15,6 @@
  @include mobile {
   padding: 1rem;
  }
- @include Qhd{
-  padding: 1em 29em;
- }
- @include Uhd {
-  padding: 1em 60em;
- }
- @include desktop-ultrawide {
-  padding: 1em 50em;
- }
 
  .hamburger {
   cursor: pointer;
@@ -76,6 +67,12 @@
   padding: 1em 4em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: 0, 5s ease;
+  @include mobile{
+   flex-direction: column;
+   width: 100%;
+   left: 0;
+   top: -150px;
+  }
 
   .navLink {
    color: $text-color-1;

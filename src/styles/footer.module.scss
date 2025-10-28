@@ -6,15 +6,6 @@
  @include mobile{
   padding: 2rem 1rem;
  }
- @include Qhd {
-  padding: 1em 29em;
- }
- @include Uhd {
-  padding: 1em 60em;
- }
- @include desktop-ultrawide {
-  padding: 1em 50em;
- }
 
  .footer_con {
   display: flex;
